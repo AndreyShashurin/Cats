@@ -1,0 +1,11 @@
+@font-face { 
+	font-family: "ExoThin";
+  	src: url('/assets/fonts/Exo2.0-Thin.otf');
+}
+body{
+	background-image: url('/assets/images/bg.png');
+	margin:0;
+	padding:0;
+    background-size: contain;
+	font-family: "ExoThin";
+}

@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="bg">
+  <h1>Ты сегодня покормил кота?</h1>
+  <div class="flexBox">
+    <div (click)="getClick(cat)" [class.flexBox_selected]="activeItem.indexOf(cat.id) >=0" [className]="cat.availability ? 'flexBox__default border-style-thin ' : 'flexBox__default border-style-thin flexBox_disabled'" *ngFor="let cat of cats; index as i">
+      <div class="flexBox__container">
+        <div class="flexBox__title"> {{cat.title}}</div>
+        <div class="flexBox__taste">Нямушка  <br><span>c {{cat.name}}</span></div>
+        <div class="flexBox__category">
+          <div>{{cat.count}} порций</div>
+          <div>{{cat.gift}}</div>
+        </div>
+      </div>
+      <div class="flexBox__weight">
+        <div class="flexBox__weightCat">
+          <div>{{cat.weight}}</div>
+          <div>кг</div>
+        </div>
+      </div>
+      <div [className]="cat.availability ? 'flexBox__footer' : 'flexBox__footer flexBox__footer_disableds'">
+        {{cat.subtitle}}<span *ngIf="cat.availability">, <a [class.flexBox_selected]="activeItem.indexOf(cat.id) >=0">купи</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
